@@ -23,12 +23,12 @@ nop.value = '';
 
 // total calculate
 const total = (billVal, tipVal, nopVal, tag) => {
-  if (billVal <= 0 || tipVal < 5 || nopVal < 2) {
+  if (billVal <= 0 || tipVal < 5 || nopVal < 1) {
     if (tag.classList.contains('bill-value')) {
       billVal <= 0 ? billInvalid(bill) : billValid(bill);
     }
     if (tag.classList.contains('number-input')) {
-      nopVal < 2 ? nopInvalid(nop) : nopValid(nop);
+      nopVal < 1 ? nopInvalid(nop) : nopValid(nop);
     }
     if (tag.classList.contains('custom')) {
       tipVal < 5 ? customInvalid(tip) : tipValid(tip);
