@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Primary
+
+$StrongCyan: hsl(172, 67%, 45%);
+
+// Neutral
+
+$VeryDarkCyan: hsl(183, 100%, 15%);
+$DarkGrayishCyan: hsl(186, 14%, 43%);
+$DarkGrayishCyann: hsl(184, 14%, 56%);
+$LightGrayishCyann: hsl(185, 41%, 84%);
+$LightGrayishCyan: hsl(189, 41%, 97%);
+
+$font: 'Space Mono', monospace;
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: $LightGrayishCyann;
+}
+
+input {
+  border: none;
+  text-align: right;
+  width: 100%;
+  font-size: 1.5rem;
+  color: $VeryDarkCyan;
+  font-family: inherit;
+  font-weight: 700;
+  &:focus {
+    outline: none;
+  }
+}
+
+.input-wrap {
+  border: 2px solid transparent;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0.8rem;
+  margin-top: 5px;
+  &:hover {
+    border-color: $StrongCyan;
+  }
+  &:focus-within {
+    border-color: $StrongCyan;
+  }
+}
+
+.wrap {
+  font-family: $font;
+  display: grid;
+  justify-content: flex-end;
+  justify-content: center;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr max-content;
+  height: 100%;
+  .logo {
+    text-align: center;
+    letter-spacing: 12px;
+    padding: 50px 0 40px 0;
+    line-height: 36px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $VeryDarkCyan;
+    align-self: center;
+  }
+  .card {
+    height: max-content;
+    background-color: $LightGrayishCyan;
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding: 1.5rem;
+    max-width: 550px;
+    margin: 0 auto;
+    align-self: flex-end;
+    display: grid;
+    label {
+      color: $DarkGrayishCyan;
+      font-weight: 700;
+    }
+    .bill-card {
+      padding: 0.5rem 0.5rem 39px 0.5rem;
+
+      //tip wrap
+      .tip-wrap {
+        padding: 1rem 0;
+        .tip-btns {
+          display: flex;
+          flex-wrap: wrap;
+          color: white;
+          text-align: center;
+          justify-content: space-evenly;
+          align-items: center;
+          padding-top: 0.5rem;
+          .btn {
+            width: 9.125rem;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+            background-color: $VeryDarkCyan;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: 100ms all ease-in;
+            font-family: inherit;
+            color: inherit;
+            &:hover {
+              cursor: pointer;
+              background-color: $LightGrayishCyann;
+              color: $VeryDarkCyan;
+              filter: saturate(3);
+            }
+          }
+          .btn.selected {
+            background-color: $LightGrayishCyann;
+            color: $VeryDarkCyan;
+            filter: saturate(3);
+          }
+          .custom {
+            border: 2px solid transparent;
+            background-color: transparent;
+            padding: 0.4rem 0;
+            text-align: center;
+            color: $VeryDarkCyan;
+            &:hover {
+              cursor: text;
+              border-color: $StrongCyan;
+              background-color: transparent;
+            }
+            &:focus {
+              border-color: $StrongCyan;
+            }
+          }
+        }
+      }
+      //person wrap
+      .number-wrap {
+        display: flex;
+        align-items: center;
+      }
+    }
+    // per person bill card
+    .ppbill {
+      display: grid;
+      align-content: space-between;
+      border-radius: 1rem;
+      padding: 44px 1.5rem 1.5rem 1.5rem;
+      background-color: $VeryDarkCyan;
+      max-height: max-content;
+      min-height: 256px;
+      .taw,
+      .tw {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .text {
+        color: white;
+        span {
+          color: $DarkGrayishCyan;
+        }
+      }
+      .amount {
+        color: $StrongCyan;
+        font-size: 2rem;
+        word-wrap: break-word;
+        word-break: break-all;
+        line-height: 2rem;
+        cursor: default;
+      }
+      .reset {
+        background-color: $StrongCyan;
+        border: none;
+        color: $VeryDarkCyan;
+        padding: 0.7rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-family: inherit;
+        font-size: 1.1rem;
+        cursor: pointer;
+        font-family: inherit;
+
+        &:hover {
+          background-color: $LightGrayishCyann;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    height: 785px;
+    justify-content: center;
+    margin: auto 0;
+    .logo {
+      padding: 0 0 6rem 0;
+    }
+    .card {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      align-self: center;
+      max-width: 90vw;
+      width: 920px;
+      border-radius: 1.5rem;
+      align-items: center;
+      height: max-content;
+      box-shadow: 0 2.5rem 7rem -6rem $DarkGrayishCyann;
+      .bill-card {
+        padding: 2.5rem 2rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .tip-wrap .tip-btns .btn {
+          width: 114px;
+          height: 48px;
+        }
+        .custom {
+          &::placeholder {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .ppbill {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 'taw' 'tw' '.' 'reset';
+        padding: 3rem 2.5rem 38px 2.5rem;
+        height: 400px;
+        .taw {
+          grid-area: taw;
+        }
+        .tw {
+          grid-area: tw;
+        }
+        .amount {
+          font-size: 2.5rem;
+          font-weight: 700;
+        }
+        button {
+          grid-area: reset;
+          height: 3rem;
+          width: 100%;
+          justify-self: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-height: 1024px) and (max-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap {
+    max-height: 900px;
+    .logo {
+      padding-top: 0;
+    }
+    .card {
+      border-radius: 1.5rem;
+      .ppbill {
+        height: 280px;
+      }
+    }
+  }
+}
+
+// error
+.input-wrap.error,
+.custom.error {
+  border-color: rgba(255, 0, 0, 0.644) !important;
+}
+
+.text-wrap {
+  display: flex;
+  justify-content: space-between;
+  label.invalid {
+    color: rgba(255, 0, 0, 0.644);
+    font-size: 0.9rem;
+    display: none;
+  }
+}

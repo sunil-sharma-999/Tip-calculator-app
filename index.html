@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/images/favicon-32x32.png"
+    />
+
+    <title>Tip calculator app | Sunil Sharma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <script src="./src/app.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <p class="logo">
+        SPLI <br />
+        TTER
+      </p>
+      <form action="#" class="card">
+        <div class="bill-card">
+          <!-- bill wrap -->
+          <div class="bill-wrap">
+            <div class="text-wrap">
+              <label for="title-bill" class="title-bill">Bill</label>
+              <label for="invalid" class="invalid">Invalid</label>
+            </div>
+            <div class="bill-input input-wrap">
+              <img src="./src/images/icon-dollar.svg" alt="$" class="dollar" />
+              <input
+                class="bill-value"
+                type="number"
+                placeholder="0"
+                step="0.01"
+              />
+            </div>
+          </div>
+          <!-- tip wrap -->
+          <div class="tip-wrap">
+            <div class="text-wrap">
+              <label for="title-tip" class="title-tip">Select Tip %</label>
+              <label for="invalid" class="invalid">Invalid</label>
+            </div>
+            <div class="tip-btns">
+              <button class="btn selected" value="5" onclick="return false">
+                5%
+              </button>
+              <button class="btn" value="10" onclick="return false">10%</button>
+              <button class="btn" value="15" onclick="return false">15%</button>
+              <button class="btn" value="25" onclick="return false">25%</button>
+              <button class="btn" value="50" onclick="return false">50%</button>
+              <input
+                onclick="custom()"
+                type="number"
+                class="btn custom"
+                placeholder="Custom"
+                step="1"
+                min="5"
+              />
+            </div>
+          </div>
+          <!-- number wrap -->
+          <div class="nop">
+            <div class="text-wrap">
+              <label for="title-tip" class="title-tip">Number Of People</label>
+              <label for="invalid" class="validation invalid"
+                >Cant't be zero</label
+              >
+            </div>
+            <div class="number-wrap input-wrap">
+              <img
+                src="./src/images/icon-person.svg"
+                alt="Person"
+                class="person"
+              />
+              <input
+                type="number"
+                placeholder="0"
+                class="number-input"
+                min="0"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="ppbill">
+          <!-- tip amount -->
+          <div class="taw">
+            <p class="text">
+              Tip Amount <br />
+              <span>/ person</span>
+            </p>
+            <p class="amount tip-amount">$0.00</p>
+          </div>
+          <!-- total -->
+          <div class="tw">
+            <p class="text">
+              Total <br />
+              <span>/ person</span>
+            </p>
+            <p class="amount total-amount">$0.00</p>
+          </div>
+          <!-- reset -->
+          <button class="reset" type="reset">RESET</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

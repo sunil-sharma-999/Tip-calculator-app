@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #c5e4e7;
+}
+
+input {
+  border: none;
+  text-align: right;
+  width: 100%;
+  font-size: 1.5rem;
+  color: #00494d;
+  font-family: inherit;
+  font-weight: 700;
+}
+input:focus {
+  outline: none;
+}
+
+.input-wrap {
+  border: 2px solid transparent;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0.8rem;
+  margin-top: 5px;
+}
+.input-wrap:hover {
+  border-color: #26c0ab;
+}
+.input-wrap:focus-within {
+  border-color: #26c0ab;
+}
+
+.wrap {
+  font-family: "Space Mono", monospace;
+  display: grid;
+  justify-content: flex-end;
+  justify-content: center;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr max-content;
+  height: 100%;
+}
+.wrap .logo {
+  text-align: center;
+  letter-spacing: 12px;
+  padding: 50px 0 40px 0;
+  line-height: 36px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00494d;
+  align-self: center;
+}
+.wrap .card {
+  height: max-content;
+  background-color: #f4fafa;
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 1.5rem;
+  max-width: 550px;
+  margin: 0 auto;
+  align-self: flex-end;
+  display: grid;
+}
+.wrap .card label {
+  color: #5e7a7d;
+  font-weight: 700;
+}
+.wrap .card .bill-card {
+  padding: 0.5rem 0.5rem 39px 0.5rem;
+}
+.wrap .card .bill-card .tip-wrap {
+  padding: 1rem 0;
+}
+.wrap .card .bill-card .tip-wrap .tip-btns {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+.wrap .card .bill-card .tip-wrap .tip-btns .btn {
+  width: 9.125rem;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  background-color: #00494d;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: 100ms all ease-in;
+  font-family: inherit;
+  color: inherit;
+}
+.wrap .card .bill-card .tip-wrap .tip-btns .btn:hover {
+  cursor: pointer;
+  background-color: #c5e4e7;
+  color: #00494d;
+  filter: saturate(3);
+}
+.wrap .card .bill-card .tip-wrap .tip-btns .btn.selected {
+  background-color: #c5e4e7;
+  color: #00494d;
+  filter: saturate(3);
+}
+.wrap .card .bill-card .tip-wrap .tip-btns .custom {
+  border: 2px solid transparent;
+  background-color: transparent;
+  padding: 0.4rem 0;
+  text-align: center;
+  color: #00494d;
+}
+.wrap .card .bill-card .tip-wrap .tip-btns .custom:hover {
+  cursor: text;
+  border-color: #26c0ab;
+  background-color: transparent;
+}
+.wrap .card .bill-card .tip-wrap .tip-btns .custom:focus {
+  border-color: #26c0ab;
+}
+.wrap .card .bill-card .number-wrap {
+  display: flex;
+  align-items: center;
+}
+.wrap .card .ppbill {
+  display: grid;
+  align-content: space-between;
+  border-radius: 1rem;
+  padding: 44px 1.5rem 1.5rem 1.5rem;
+  background-color: #00494d;
+  max-height: max-content;
+  min-height: 256px;
+}
+.wrap .card .ppbill .taw,
+.wrap .card .ppbill .tw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.wrap .card .ppbill .text {
+  color: white;
+}
+.wrap .card .ppbill .text span {
+  color: #5e7a7d;
+}
+.wrap .card .ppbill .amount {
+  color: #26c0ab;
+  font-size: 2rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 2rem;
+  cursor: default;
+}
+.wrap .card .ppbill .reset {
+  background-color: #26c0ab;
+  border: none;
+  color: #00494d;
+  padding: 0.7rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+.wrap .card .ppbill .reset:hover {
+  background-color: #c5e4e7;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    height: 785px;
+    justify-content: center;
+    margin: auto 0;
+  }
+  .wrap .logo {
+    padding: 0 0 6rem 0;
+  }
+  .wrap .card {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-self: center;
+    max-width: 90vw;
+    width: 920px;
+    border-radius: 1.5rem;
+    align-items: center;
+    height: max-content;
+    box-shadow: 0 2.5rem 7rem -6rem #7f9c9f;
+  }
+  .wrap .card .bill-card {
+    padding: 2.5rem 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .wrap .card .bill-card .tip-wrap .tip-btns .btn {
+    width: 114px;
+    height: 48px;
+  }
+  .wrap .card .bill-card .custom::placeholder {
+    font-size: 1.2rem;
+  }
+  .wrap .card .ppbill {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "taw" "tw" "." "reset";
+    padding: 3rem 2.5rem 38px 2.5rem;
+    height: 400px;
+  }
+  .wrap .card .ppbill .taw {
+    grid-area: taw;
+  }
+  .wrap .card .ppbill .tw {
+    grid-area: tw;
+  }
+  .wrap .card .ppbill .amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  .wrap .card .ppbill button {
+    grid-area: reset;
+    height: 3rem;
+    width: 100%;
+    justify-self: center;
+  }
+}
+@media screen and (min-height: 1024px) and (max-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrap {
+    max-height: 900px;
+  }
+  .wrap .logo {
+    padding-top: 0;
+  }
+  .wrap .card {
+    border-radius: 1.5rem;
+  }
+  .wrap .card .ppbill {
+    height: 280px;
+  }
+}
+.input-wrap.error,
+.custom.error {
+  border-color: rgba(255, 0, 0, 0.644) !important;
+}
+
+.text-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.text-wrap label.invalid {
+  color: rgba(255, 0, 0, 0.644);
+  font-size: 0.9rem;
+  display: none;
+}/*# sourceMappingURL=style.css.map */
