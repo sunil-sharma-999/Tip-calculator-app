@@ -34,12 +34,13 @@
           <!-- bill wrap -->
           <div class="bill-wrap">
             <div class="text-wrap">
-              <label  class="title-bill">Bill</label>
-              <label class="invalid">Invalid</label>
+              <label for="billTitle" class="title-bill">Bill</label>
+              <label for="billTitle" class="invalid">Invalid</label>
             </div>
             <div class="bill-input input-wrap">
               <img src="./src/images/icon-dollar.svg" alt="$" class="dollar" />
               <input
+                     id="billTitle"
                 class="bill-value"
                 type="number"
                 placeholder="0"
@@ -50,8 +51,8 @@
           <!-- tip wrap -->
           <div class="tip-wrap">
             <div class="text-wrap">
-              <label  class="title-tip">Select Tip %</label>
-              <label class="invalid">Invalid</label>
+              <label for="tipTitle" class="title-tip">Select Tip %</label>
+              <label for="tipTitle" class="invalid">Invalid</label>
             </div>
             <div class="tip-btns">
               <button class="btn selected" value="5" onclick="return false">
@@ -62,6 +63,7 @@
               <button class="btn" value="25" onclick="return false">25%</button>
               <button class="btn" value="50" onclick="return false">50%</button>
               <input
+                     id="tipTitle"
                 onclick="custom()"
                 type="number"
                 class="btn custom"
@@ -74,8 +76,8 @@
           <!-- number wrap -->
           <div class="nop">
             <div class="text-wrap">
-              <label class="title-tip">Number Of People</label>
-              <label  class="validation invalid"
+              <label for="nopTitle" class="title-nop">Number Of People</label>
+              <label for="nopTitle" class="validation invalid"
                 >Cant't be zero</label
               >
             </div>
@@ -86,6 +88,7 @@
                 class="person"
               />
               <input
+                     id="nopTitle"
                 type="number"
                 placeholder="0"
                 class="number-input"
